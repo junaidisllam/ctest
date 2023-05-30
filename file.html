@@ -84,7 +84,7 @@
       if (fileType === 'text/plain') {
         htmlCode = '<pre>' + fileData + '</pre>';
       } else if (fileType.startsWith('image/')) {
-        htmlCode = '<img src="' + fileData + '">';
+        htmlCode = '' + fileData + '';
       } else if (fileType === 'application/pdf') {
         htmlCode = '<embed src="' + fileData + '" type="application/pdf" width="100%" height="600px">';
       }
