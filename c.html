@@ -1,0 +1,57 @@
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h3>QR Code Scanner</h3>
+        <div id="qr-video-container">
+          <video id="qr-video" width="100%" height="auto" playsinline></video>
+        </div>
+        <button id="scan-btn" class="btn btn-primary mt-3">
+          <i class="fas fa-camera"></i> Scan QR Code
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.17.1/umd/index.min.js"></script>
+  <script>
+  // Define variables
+const qrVideo = document.getElementById('qr-video');
+const scanBtn = document.getElementById('scan-btn');
+const codeReader = new ZXing.BrowserQRCodeReader();
+
+// Add event listener to scan button
+scanBtn.addEventListener('click', () => {
+  scanQRCode();
+});
+
+// Function to start scanning QR Code
+function scanQRCode() {
+  codeReader.decodeFromVideoDevice(null, 'qr-video', (result, err) => {
+    if (result) {
+      // QR Code is detected
+      window.open(`${result.text}`);
+    }
+    if (err && !(err instanceof ZXing.NotFoundException)) {
+      // Error occurred while scanning
+      alert('Error scanning QR Code');
+      console.error(err);
+    }
+  });
+}
+
+// Initialize the camera feed
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then((stream) => {
+    qrVideo.srcObject = stream;
+    qrVideo.play();
+  })
+  .catch((err) => {
+    console.error('Error accessing camera:', err);
+  });
+  </script>
+</body>
