@@ -1,0 +1,18 @@
+.follow-button{
+        width: 100%;
+        background: #ed1c24;
+        border: navajowhite;
+        height: 100px;
+}
+.dy{
+display: none;
+}
+.mobile-menu>ul>li:nth-child(3) {
+    display: none;
+}
+#free-menu ul>li:nth-child(3) {
+    display: none;
+}
+.member-thumbnail img{
+    border-radius: 50%;
+}
