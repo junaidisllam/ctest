@@ -1,16 +1,28 @@
-    var elem = document.getElementById("myvideo");
-    var overlay = document.querySelector(".overlay");
+// Wait for the document to be ready
+$(document).ready(function() {
+  // Get the search input element
+  var searchInput = $('.search-input');
 
-    function openFullscreen() {
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
-            elem.msRequestFullscreen();
-        }
-    }
+  // Set up autocomplete
+  searchInput.autocomplete({
+    source: function(request, response) {
+      // Here, you can make an AJAX request to fetch autocomplete suggestions based on the user's input
+      // Replace the below example with your own implementation
+      var suggestions = [
+        'Apple',
+        'Banana',
+        'Orange',
+        'Pineapple',
+        'Strawberry'
+      ];
 
-    function hideOverlay() {
-        overlay.style.display = "none";
+      // Filter suggestions based on the user's input
+      var filteredSuggestions = $.grep(suggestions, function(item) {
+        return item.toLowerCase().indexOf(request.term.toLowerCase()) === 0;
+      });
+
+      // Provide the filtered suggestions to the autocomplete widget
+      response(filteredSuggestions);
     }
+  });
+});
