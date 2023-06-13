@@ -1,51 +1,54 @@
-  // Get the search input field and add an event listener
-  const searchInput = document.querySelector('.search-input');
-  searchInput.addEventListener('input', handleInput);
+const img_url = document.querySelector('#img-url'),
+    upload_file_btn = document.querySelector('#upload-file-btn'),
+    copy_text = document.querySelector('#copy-text'),
+    img_result = document.querySelector('#img-result'),
+    converted_text = document.querySelector('#converted-text');
 
-  // Function to handle user input
-  function handleInput() {
-    const userInput = searchInput.value;
-    
-    // Fetch search suggestions or use predefined array
-    const searchSuggestions = [
-      'apple',
-      'banana',
-      'cherry',
-      'date',
-      'elderberry',
-      'fig',
-      'grape',
-      'honeydew',
-      'kiwi',
-      'lemon',
-      'mango'
-    ];
-    
-    // Filter suggestions based on user input
-    const filteredSuggestions = searchSuggestions.filter(suggestion => {
-      return suggestion.toLowerCase().includes(userInput.toLowerCase());
-    });
-    
-    // Display the filtered suggestions in a dropdown menu
-    const dropdownMenu = document.createElement('ul');
-    dropdownMenu.classList.add('autocomplete-dropdown');
-    
-    filteredSuggestions.forEach(suggestion => {
-      const listItem = document.createElement('li');
-      listItem.textContent = suggestion;
-      listItem.addEventListener('click', () => {
-        searchInput.value = suggestion;
-        dropdownMenu.remove();
-      });
-      dropdownMenu.appendChild(listItem);
-    });
-    
-    // Remove any existing dropdown menus
-    const existingDropdown = document.querySelector('.autocomplete-dropdown');
-    if (existingDropdown) {
-      existingDropdown.remove();
+
+img_url.onclick = () => {
+    img_url.select();
+}
+
+copy_text.onclick = () => {
+    copy_text.setAttribute('title', "Copied.");
+    setTimeout(() => {
+        copy_text.setAttribute('title', "Copy text.");
+    }, 2000);
+
+    if (converted_text.value != '') {
+        navigator.clipboard.writeText(converted_text.value);
     }
-    
-    // Append the dropdown menu below the search input field
-    searchInput.parentNode.appendChild(dropdownMenu);
-  }
+}
+
+img_url.addEventListener('change', createFile);
+upload_file_btn.addEventListener('change', displayImage);
+
+async function createFile() {
+    if (this.value != '') {
+        img_result.src = this.value;
+
+        await fetch(this.value)
+            .then(res => res.blob())
+            .then(blob_file => {
+                let file = new File([blob_file], blob_file.name, { type: blob_file.type });
+                recognizeText(file);
+            })
+
+    }
+}
+
+function displayImage() {
+    const reader = new FileReader();
+    reader.onload = () => {
+        img_result.src = reader.result;
+    }
+    reader.readAsDataURL(this.files[0]);
+    recognizeText(this.files[0]);
+}
+
+function recognizeText(file) {
+    Tesseract.recognize(file)
+        .then(result => {
+            converted_text.value = result.text;
+        })
+}
