@@ -1,0 +1,209 @@
+@media (max-width:600px) {
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+        cursor: pointer;
+    }
+    .nav #nav-check:checked ~ .nav-btn > label,
+    .nav > .nav-btn > label:hover {
+        background-color: #fff;
+    }
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #000000;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #ffffff;
+        height: 0;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+        height: calc(100vh - 302px);
+        overflow-y: auto;
+        text-align: center;
+        z-index: 1;
+        padding-right: inherit;
+    }
+}
+@media only screen and (min-width: 1px) and (max-width: 600px) {
+    .home-section-video img{
+        width: 100%;
+    }
+    .home-section-image img{
+        margin-top: 150px;
+        width: 100%;
+    }
+    .book{
+    position: revert;
+    margin-top: 12px;
+}
+    .First-bar ul{
+            max-width: 100%;
+    }
+.First-bar ul li {
+    list-style: none;
+    padding: 10px;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .First-bar ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 0px;
+    transition: 1s;
+}
+.TRAVEL-SUPPORT-SECTION-NUMBER {
+    max-width: 85%;
+    margin: auto;
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+    .section-too {
+    display: block;
+}
+    .airlines{
+        display: block;
+        max-width: 90%;
+    }
+    .airlines-number {
+    width: 100%;
+    background-color: #d5dee2;
+    border-radius: 2rem;
+    padding: 10px;
+    padding-bottom: 25px;
+    margin: auto;
+    margin-bottom: 13px;
+}
+    .memories {
+    display: block;
+    max-width: 90%;
+    margin: auto;
+    padding: 7px;
+    padding-left: 3px;
+    text-align: center;
+}
+    .memories h1 {
+    font-size: 5.5vw;
+    margin-bottom: 12px;
+}
+    .memories a {
+    margin-left: 0%;
+    position: relative;
+    top: -7px;
+}
+    .TRAVEL-SUPPORT-SECTION-IMAGES {
+margin-bottom: -84px;
+}
+    .Home-section-text {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+    .Unaccompanied{
+    display: block;
+}
+    .Unaccompanied-Ul ul {
+    display: flex;
+    max-width: 90%;
+    margin: auto;
+}
+    .Unaccompanied-Image {
+    text-align: center;
+}
+    .Unaccompanied-Image img {
+    max-width: 91%;
+    margin: auto;
+    margin-top: 12px;
+}
+    .Unaccompanied-Text {
+    padding-left: 0%;
+    text-align: center;
+}
+    .footer-logo {
+    /* margin-left: 37px; */
+    max-width: 200px;
+    margin: auto;
+}
+    .display-grid {
+    display: block;
+    text-align: center;
+}
+    .Subscribe-input input[type="email"] {
+    height: 38px;
+    font-size: 16px;
+    width: 95%;
+    border-radius: 5rem;
+    padding-left: 13px;
+    border: #bda6a6;
+}
+    .Subscribe-text h1 {
+    font-size: 21px;
+    padding: 8px;
+}
+    .Top-traveles {
+    background: #FFF;
+    margin: auto;
+    padding-left: 0px;
+    width: 90%;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+}
+    .Top-traveles-card-number {
+    max-width: 200px;
+    height: 289px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 10rem;
+    margin: auto;
+        margin-bottom: 11px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
