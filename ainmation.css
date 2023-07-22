@@ -1,0 +1,18 @@
+html{
+    overflow-x: hidden;
+}
+.home-section-image img {
+    animation: plan 2s linear 0s infinite alternate backwards running;
+}
+@keyframes plan {
+    0% {
+        margin-left: 11vh;
+        transform: rotate(0deg);
+    }
+    40%{
+        margin-right: 2vh;
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
