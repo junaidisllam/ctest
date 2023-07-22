@@ -1,18 +1,444 @@
-        .follow-button{
-        width: 100%;
-        background: #ed1c24;
-        border: navajowhite;
-        height: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
-.dy{
-display: none;
+
+html {
+    scroll-behavior: smooth
 }
-.mobile-menu>ul>li:nth-child(3) {
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+}
+
+.nav {
+    height: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+}
+
+.nav > .nav-header {
+    display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #000000;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.nav > .nav-btn {
     display: none;
 }
-#free-menu ul>li:nth-child(3) {
+
+.nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+    padding-right: 13%;
+}
+
+.nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+    padding-bottom: 4px;
+    transition: 0.5s;
+}
+
+.nav > .nav-links > a:hover {
+    visibility: visible;
+    transform: scaleX(1);
+
+}
+
+.nav > .nav-links > a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav > .nav-links > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.nav > #nav-check {
     display: none;
 }
-.member-thumbnail img{
+
+.book {
+    text-align: end;
+    position: relative;
+    margin-top: -62px;
+    display: inline-flex;
+    left: 12vh;
+    padding: 5px 20px;
+    border-radius: 5rem;
+    background: #C2EDF9;
+    background: radial-gradient(at left bottom, #83d4eb, #609bb8, #00aaff);
+    color: #ffff;
+}
+
+a.Book-a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.Home-section {
+    height: 92vh;
+    max-width: 100%;
+    min-width: 100%;
+    background: rgb(255, 255, 255);
+    margin: auto;
+}
+
+.Home-section-text {
+    text-align: center;
+    padding-top: 41px;
+    padding-bottom: 20px;
+}
+
+.home-section-video {
+    text-align: center;
+}
+
+.home-section-video img {
+    border-radius: 14rem;
+}
+
+.home-section-image {
+    text-align: center;
+    margin-top: -345px;
+}
+
+.First-bar {
+    text-align: center;
+}
+
+.First-bar ul {
+    display: inline-flex;
+    background-color: #d8d8e1d6;
+    border-radius: 5rem;
+    transition: 0.5s;
+}
+
+.First-bar ul li {
+    list-style: none;
+    background-color: #ffffff00;
+    margin: 8px;
+    padding: 4px 29px;
+    transition: 1s;
+}
+
+.First-bar ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: 5px;
+    transition: 1s;
+}
+
+.First-bar ul li:hover {
+    border-radius: 5rem;
+    background: #C2EDF9;
+    background: radial-gradient(at left bottom, #C2EDF9, #78BBDD);
+    cursor: pointer;
+    transition: 1s;
+}
+
+.First-bar .active {
+    background: #C2EDF9;
+    background: radial-gradient(at left bottom, #C2EDF9, #78BBDD);
+    border-radius: 5rem;
+}
+
+.First-Card {
+    text-align: center;
+}
+
+.f-card {
+    display: inline-flex;
+    text-align: left;
+    margin: 10px;
+}
+
+.f-card-icon {
+    margin-top: 12px;
+}
+
+.f-card-icon i {
+    font-size: 21px;
+    border-radius: 5rem;
+    padding: 4px;
+    background: #dedee6;
+    position: relative;
+    cursor: pointer;
+}
+
+.f-card-text {
+    margin-left: 8px;
+}
+
+.f-card-text small {
+    opacity: 72%;
+}
+
+.TRAVEL-SUPPORT {
+    text-align: center;
+}
+
+.section-too {
+    display: flex;
+}
+
+.TRAVEL-SUPPORT-SECTION-NUMBER {
+    max-width: 50%;
+    position: relative;
+    left: 148px;
+    top: 51px;
+}
+
+.TRAVEL-SUPPORT-SECTION-NUMBER span {
+    background-color: tomato;
+    color: #fff;
+    border-radius: 5rem;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+span.too {
+    background: rgb(35, 35, 187);
+}
+
+span.three {
+    background-color: rgb(0, 174, 255);
+}
+
+.TRAVEL-SUPPORT-SECTION-IMAGES {
+    margin-top: 57px;
+}
+
+.TRAVEL-SUPPORT-SECTION-IMAGES img {
+    max-width: 100%;
+    border-radius: 50rem;
+}
+
+.memories {
+    display: flex;
+    max-width: 90%;
+    margin: auto;
+    padding: 7px;
+    padding-left: 80px;
+}
+
+.memories a {
+    text-decoration: none;
+    border: 1px solid;
+    padding: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5rem;
+    max-height: 41px;
+    background: blue;
+    color: #fff;
+    margin-left: 18%;
+}
+
+.airlines {
+    text-align: center;
+    display: flex;
+    margin: auto;
+    background: #ffffff;
+    max-width: 50%;
+}
+
+.airlines-number {
+    width: 200px;
+    background-color: #d5dee2;
+    border-radius: 2rem;
+    padding: 10px;
+    padding-bottom: 25px;
+    margin: auto;
+}
+
+.airlines-number i {
+    font-size: 40px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border-radius: 5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.to {
+    background: tomato;
+}
+
+.th {
+    background: #00aaff;
+}
+
+.o {
+    background: #00ff62;
+}
+.Unaccompanied{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+.Unaccompanied-Text{
+    padding-left: 10%;
+}
+.Unaccompanied-Ul ul{
+    display: flex;
+    margin-left: 95px;
+}
+.Unaccompanied-Ul ul li {
+    list-style: none;
+    max-width: 265px;
+    margin: 6px;
+}
+.Unaccompanied-Ul small {
+    font-size: 12px;
+    color: #333;
+}
+.Unaccompanied-Image img{
+            max-width: 41%;
+    margin-top: -25px;
+}
+.Top-traveles {
+    background: #FFF;
+    margin: auto;
+    padding-left: 27px;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    cursor: pointer;
+}
+.Top-traveles-text{
+    text-align: center;
+}
+.Top-traveles-card-image img {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+    border: 3px solid #fff;
+}
+.Top-traveles-card-number {
+    max-width: 200px;
+    height: 289px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 10rem;
+}
+.one{
+    background: url('img/R.jpg');
+    background-size: cover;
+}
+.two{
+    background: url('img/trable.jpg');
+    background-size: cover;
+}
+.three{
+    background: url('img/R.webp');
+        background-size: cover;
+}
+.fur{
+    background: url('img/big.jpg');
+        background-size: cover;
+}
+.footer{
+    background: #f1f4f4;
+}
+.Subscribe-text{
+    text-align: center;
+}
+.Subscribe-input{
+    text-align: center
+}
+.Subscribe-input input[type="email"] {
+    height: 38px;
+    font-size: 18px;
+    width: 480px;
+    border-radius: 5rem;
+    padding-left: 13px;
+    border: #bda6a6;
+}
+.Subscribe-input input[type="submit"] {
+    background: #494486;
+    border: 5px solid;
+    padding: 8px;
+    font-size: 18px;
+    border-radius: 5rem;
+    margin-left: -109px;
+    color: #fff;
+    cursor: pointer;
+}
+.display-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.footer-logo {
+    margin-left: 37px;
+    max-width: 200px;
+}
+.footer-logo img {
+    width: 25%;
+}
+
+.Information ul li {
+    list-style: none;
+    color: black;
+}
+.Information ul li a{
+    text-decoration: none;
+    color: #333;
+}
+.Quick-Guide ul li {
+    list-style: none;
+    color: black;
+}
+.Quick-Guide ul li a{
+    text-decoration: none;
+    color: #333;
+}
+.social-netowrk{
+    text-align: center;
+}
+.social-netowrk a i {
+    padding: 4px;
+    border-radius: 5rem;
+    padding-left: 7px;
+    padding-right: 7px;
+    color: #cbc5c5;
+    background: #1b1b39;
+    margin: 6px;
+}
+.cupyright {
+    text-align: center;
+    background: #c9c9c9;
+    padding: 15px;
 }
